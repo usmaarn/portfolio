@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Blogs() {
   return (
-    <div className="bg-gray-200 dark:bg-gray-900 p-24">
+    <div className="bg-gray-200 dark:bg-gray-900 p-10 md:p-24">
 
         <div className='max-w-[1000px] mx-auto'>
 

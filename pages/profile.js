@@ -20,7 +20,9 @@ const myskills = [
 
 export default function profile() {
   return (
-    <div className="md:grid grid-cols-5">
+    <div className="md:grid grid-cols-5" style={{
+        // background: "url('/pics.png')",
+    }}>
 
         <div className="col-span-3">
 

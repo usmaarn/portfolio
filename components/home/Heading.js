@@ -4,10 +4,10 @@ export default function Heading() {
   return (
     <div className="dark:text-white">
 
-        <div className="font-semibold flex items-center max-w-[1000px] mx-auto gap-5" 
+        <div className="relative font-semibold flex items-center max-w-[1000px] mx-auto gap-5 overflow-hidden" 
             style={{height: 'calc(100vh - 100px)'}}
         >
-            <div className='flex-grow'>
+            <div className='flex-grow p-5 z-50'>
                 <h3>Hi there, I am</h3>
                 <h2 className="text-4xl font-black">Usman Muhammad</h2> 
                 <h3 className="text-lg italic">A Web Developer & Graphic Designer</h3>
@@ -19,7 +19,7 @@ export default function Heading() {
                 </button>
             </div>
 
-            <div className="">
+            <div className="absolute opacity-25 md:opacity-75 md:relative">
                 <img className='relative -z-0' src='/pics.png' width={2000} />
             </div>
 

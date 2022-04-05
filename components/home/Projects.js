@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Projects() {
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 p-24">
+    <div className="bg-gray-100 dark:bg-gray-800 p-10 md:p-24">
         
         <div className='max-w-[1000px] mx-auto'>
             <h1 className={styles.heading}>Projects</h1>
