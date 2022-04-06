@@ -13,7 +13,7 @@ export default function Projects() {
             <div className={styles.projects}>
                 {['Code.NG', 'Class Nigeria', 'Woli Mall', 'Woli Pay', 'Woli Invest', 'Naija Girls'].map(el => (
                     <div className={styles.project} key={el}>
-                        <h3 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-semibold'>Coming Soon</h3>
+                        <h3 className='absolute top-1/2 w-full text-center -translate-y-1/2 text-2xl font-semibold'>Coming Soon</h3>
                         <button className='px-3 py-1 bg-black text-white text-sm hover:bg-green-500 hover:text-black'>{el}</button>
                         <p className={styles.project_info}>
                             loremDeserunt Lorem et labore minim quis sunt. Consectetur amet elit fugiat aliqua ut. Adipisicing aliqua id nisi eiusmod elit in eiusmod ex veniam aute duis duis nostrud qui.
