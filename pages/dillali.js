@@ -16,6 +16,17 @@ export default function Dillali() {
         setState({...state, [e.target.name]: e.target.value})
     }
 
+    const reset_form = () => {
+        setState({
+            email:"",
+            contact_name: "",
+            referral_code:"",
+            business_name: "",
+            business_phone:"",
+            business_address: '',
+        })
+    }
+
 
     const process = (e) => {
         e.preventDefault();
@@ -28,6 +39,7 @@ export default function Dillali() {
                 updateSettings({settings: state, access_token}, (res) => {
                     console.log(res);
                     alert("Registration Successfull");
+                    reset_form();
                 })
 
             }); 
