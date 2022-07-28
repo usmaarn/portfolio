@@ -1,0 +1,22 @@
+
+.header {
+
+    @apply flex flex-col justify-center items-start h-full gap-3 md:w-1/2;
+
+    .name {
+        @apply text-5xl font-black uppercase text-green-400;
+    }
+
+    .title {
+        @apply text-xl uppercase font-normal tracking-widest text-indigo-400;
+    }
+
+    .socialLinks {
+        @apply flex items-center gap-5 text-2xl mt-5 text-slate-400;
+    }
+}
+
+.overlay {
+    @apply absolute w-[900px] h-[1000px] rounded-xl top-96 md:top-24 rotate-[45deg]
+     bg-sky-200 -z-10 md:-z-10 -right-0 md:-right-1/4;
+}

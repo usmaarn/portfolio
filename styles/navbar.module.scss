@@ -1,0 +1,19 @@
+.navbar{
+    @apply fixed bg-white shadow top-0 left-0 w-screen flex h-[70px] 
+        px-5 md:px-10 items-center justify-between z-50;
+
+    .mobileMenu{
+        @apply fixed top-0 left-0 w-screen h-screen flex-col 
+        items-center justify-center gap-10 uppercase tracking-widest 
+        md:hidden -z-10 bg-white
+    }
+
+    .menu{
+        @apply hidden md:flex items-center gap-5 text-gray-500 
+        uppercase text-sm tracking-wider;
+
+        a{
+            @apply pb-1 hover:border-b border-b-green-300 hover:text-green-400;
+        }
+    }
+}
