@@ -5,6 +5,7 @@ import Contact from "@/components/index/Contact";
 import Header from "@/components/index/Header";
 import Projects from "@/components/index/Projects";
 import Skills from "@/components/index/Skills";
+import Footer from "@/layouts/Footer";
 
 export default function Index() {
   return (
