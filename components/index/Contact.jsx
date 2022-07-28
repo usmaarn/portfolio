@@ -7,7 +7,7 @@ import SocialIcon from "@/components/SocialIcon";
 
 export default function Contact(props){
     return(
-        <Wrapper title='Get In Touch'>
+        <Wrapper title='Get In Touch' id='contact'>
             <div className="md:grid grid-cols-2 gap-20">
                 <div className="mb-5 flex flex-col gap-2">
                     <SocialIcon label='09077022461' icon={<AiOutlineWhatsApp />}/>

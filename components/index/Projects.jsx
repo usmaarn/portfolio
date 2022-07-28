@@ -6,11 +6,11 @@ import {GiExpand} from 'react-icons/gi'
 
 export default function Projects(){
     return(
-        <Wrapper className="" title='My Works'>
+        <Wrapper className="" title='My Works' id='projects'>
             <div className="grid md:grid-cols-3 gap-5">
                 {projects.map(project => (
                     <div key={project.id} className="relative shadow p-5 rounded-xl h-72 
-                        bg-black/70 cursor-pointer text-slate-300 
+                        bg-black/90 cursor-pointer text-slate-300 
                         hover:bg-green-200 hover:text-slate-700">
                         <div className="absolute bottom-5 right-5 text-2xl flex items-center gap-5">
                             <a href="#" className="hover:scale-125"><ImGithub /></a>
