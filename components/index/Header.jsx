@@ -8,7 +8,7 @@ export default function Header(){
 
     return(
         <Wrapper id='home'> 
-            <div className="pt-10">
+            <div className="md:pt-10">
                 <div className={styles.overlay} />
                 <div className={styles.header}>
                     <h5 className={styles.hello}>Hello, I Am</h5>

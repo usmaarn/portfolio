@@ -1,6 +1,6 @@
 import { Button } from '@/components/Form'
 import { useState } from 'react'
-import {RiMoonFoggyFill, RiSunFoggyFill, RiMenu5Line, RiCloseFill} from 'react-icons/ri'
+import {RiMenu5Line, RiCloseFill} from 'react-icons/ri'
 import styles from '@/styles/navbar.module.scss'
 
 export default function Navbar(props){
@@ -17,25 +17,26 @@ export default function Navbar(props){
             <div className={styles.menu}>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#skills">Skills</a>
+                <a onClick={toggleOpen} href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 {/* <a href="#blogs">Blogs</a> */}
                 <a href="#contact">Contact</a>
-                <Button text='Download CV' />
             </div>
 
-            <div className={styles.mobileMenu + ` ${open ? 'flex' : 'hidden'}`}>
+            <Button text='Download CV' />
+
+            {/* <div className={styles.mobileMenu + ` ${open ? 'flex' : 'hidden'}`}>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
                 <Button text='Download CV' />
-            </div>
-
+            </div> */}
+{/* 
             <button className='md:hidden text-3xl' onClick={toggleOpen}>
                 {open ? <RiCloseFill /> : <RiMenu5Line /> }
-            </button>
+            </button> */}
 
         </nav>
     )

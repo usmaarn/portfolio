@@ -26,7 +26,7 @@ export function Textarea({onChange, label, className, placeholder}){
 
 export function Button({text, className, icon}){
     return(
-        <button className={`px-5 py-3 rounded shadow-lg shadow-sky-200 bg-sky-400/80 
+        <button className={`px-5 py-2 md:py-3 rounded shadow-lg shadow-sky-200 bg-sky-400/80 
                 text-gray-700 ${className}`}>
             {text ?? 'Button'}
         </button>
