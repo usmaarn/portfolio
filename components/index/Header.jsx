@@ -13,7 +13,7 @@ export default function Header(){
                 <div className={styles.header}>
                     <h5 className={styles.hello}>Hello, I Am</h5>
                     <h1 className={styles.name}>Usman Muhammad</h1>
-                    <h5 className={styles.title}>A Web and software developer</h5>
+                    <h5 className={styles.title}>A Full Stack Web developer</h5>
                     <p className='text-lg'>
                         To work as an expert in Web/Software Development proffering solutions 
                         to existing problems and simplifying complex procedures, 
