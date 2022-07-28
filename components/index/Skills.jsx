@@ -1,5 +1,5 @@
 import Wrapper from '@/components/Wrapper'
-import StackIcon from '@/components/StackIcon';
+import {CgChevronDoubleRight} from 'react-icons/cg'
 
 export default function Skills({}){
 
@@ -9,15 +9,14 @@ export default function Skills({}){
     ];
 
     return(
-        <Wrapper id='skills' title='skills'>
-            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 md:gap-10'>
+        <Wrapper id='skills' title='tech stack'>
+            <ul className='w-96 w-full grid grid-cols-2 gap-y-1'>
                 {skills.map(skill => (
-                    <div key={skill} className='flex flex-col items-center bg-sky-200/80 gap-5 shadow py-5 md:py-10'>
-                        <span className='text-7xl'><StackIcon icon={skill} /></span>
-                        <span className='uppercase font-semibold'>{skill}</span>
-                    </div>
+                   <li className='capitalize flex items-center gap-2'>
+                     <CgChevronDoubleRight />{skill}
+                    </li>
                 ))}
-            </div>
+            </ul>
         </Wrapper>
     )
 }

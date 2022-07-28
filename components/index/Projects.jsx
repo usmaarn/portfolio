@@ -6,7 +6,7 @@ import {GiExpand} from 'react-icons/gi'
 
 export default function Projects(){
     return(
-        <Wrapper className="" title='My Works' id='projects'>
+        <Wrapper className="" title='Some of my works' id='projects'>
             <div className="grid md:grid-cols-3 gap-5">
                 {projects.map(project => (
                     <div key={project.id} className="relative shadow p-5 rounded-xl h-72 

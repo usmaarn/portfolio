@@ -11,9 +11,12 @@ export default function Header(){
             <div className="md:pt-10">
                 <div className={styles.overlay} />
                 <div className={styles.header}>
-                    <h5 className={styles.hello}>Hello, I Am</h5>
+                    <h5 className={styles.hello}>Hi, my name is</h5>
                     <h1 className={styles.name}>Usman Muhammad</h1>
-                    <h5 className={styles.title}>Web & software developer</h5>
+                    <h5 className={styles.title}>A Full Stack Web Developer</h5>
+                    <p className='text-lg'>
+                        I Am a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products
+                    </p>
                     
                     <Button link='#contact' text="Get In Touch" />
                     

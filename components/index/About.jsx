@@ -3,21 +3,42 @@
 import {DiCode} from 'react-icons/di'
 import { Button } from '../Form';
 import Wrapper from "@/components/Wrapper"
+import {CgChevronDoubleRight} from 'react-icons/cg'
+
+const skills = [
+        'HTML', 'CSS', 'JavaScript', 'PHP', 'Python', 'Node JS',
+        'React', 'TailwindCss', 'Laravel', 'Django'
+    ];
 
 export default function About(props){
     return(
         <Wrapper id='about' title='About me'>
             <div className="grid md:grid-cols-2 gap-10 md:gap-20">
-                    <div className="w-full h-64 lg:h-96 md:h-60 bg-blue-100 shadow rounded-lg" />
 
-                    <div className="">
-                        <div className="text-lg flex flex-col gap-5 items-start">
-                            <p>
-                                I am Web/Software Developer aspiring to work as an expert in Web/Software Development proffering solutions to existing problems and simplifying complex procedures, also be an excellent performer in a highly competitive environment with a view of contributing to the effectiveness and growth of my community, possessing a strong will to advance in my technical career.
-                            </p>
-                            <Button link='#contact' text='Get In Touch' />
+                <div className="">
+                    <div className="flex flex-col gap-5 items-start">
+                        <p>
+                            Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+                        </p>
+                        <p>
+                            Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.
+                        </p>
+                        <p>
+                                also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.
+                        </p>
+                        <p>Here are a few technologies I’ve been working with recently:</p>
+                 <ul className='w-96 w-full grid grid-cols-2 gap-y-1'>
+                    {skills.map(skill => (
+                    <li className='flex items-center gap-2'>
+                        <CgChevronDoubleRight />{skill}
+                        </li>
+                    ))}
+                </ul>
                         </div>
-                    </div>  
+                </div>  
+
+                <div className="w-full h-64 lg:h-96 md:h-60 bg-blue-100 shadow rounded-lg" />
+
             </div>
         </Wrapper>
     )
