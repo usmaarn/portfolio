@@ -14,11 +14,6 @@ export default function Header(){
                     <h5 className={styles.hello}>Hello, I Am</h5>
                     <h1 className={styles.name}>Usman Muhammad</h1>
                     <h5 className={styles.title}>Web & software developer</h5>
-                    <p className='text-lg'>
-                        To work as an expert in Web/Software Development proffering solutions 
-                        to existing problems and simplifying complex procedures, 
-                        also be an excellent performer in a highly competitive environment.
-                    </p>
                     
                     <Button link='#contact' text="Get In Touch" />
                     
