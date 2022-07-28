@@ -23,10 +23,10 @@ export default function Header(){
                     <Button link='#contact' text="Get In Touch" />
                     
                     <div className={styles.socialLinks}>
-                        <a className='link' href="/"><ImTwitter /></a>
-                        <a className='link' href="/"><ImFacebook2 /></a>
-                        <a className='link' href="/"><ImGithub /></a>
-                        <a className='link' href="/"><ImLinkedin /></a>
+                        <a className='link' target='_blank' href="https://twitter.com/usmaarn"><ImTwitter /></a>
+                        <a className='link' target='_blank' href="/"><ImFacebook2 /></a>
+                        <a className='link' target='_blank' href="https://github.com/usmaarn"><ImGithub /></a>
+                        <a className='link' target='_blank' href="https://linkedin.com/in/usmaarn"><ImLinkedin /></a>
                     </div>
                 </div>
             </div>
