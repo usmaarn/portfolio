@@ -24,7 +24,15 @@ export function Textarea({onChange, label, className, placeholder}){
     )
 }
 
-export function Button({text, className, icon}){
+export function Button({text, className, icon, link}){
+    if(link){
+        return(
+            <a href={link ?? '#contact'} className={`px-5 py-2 md:py-3 rounded shadow-lg shadow-sky-200 bg-sky-400/80 
+                text-gray-700 ${className}`}>
+                {text ?? 'Button'}
+            </a>
+        )
+    }
     return(
         <button className={`px-5 py-2 md:py-3 rounded shadow-lg shadow-sky-200 bg-sky-400/80 
                 text-gray-700 ${className}`}>

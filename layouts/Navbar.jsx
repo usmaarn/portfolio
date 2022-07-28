@@ -23,7 +23,7 @@ export default function Navbar(props){
                 <a href="#contact">Contact</a>
             </div>
 
-            <Button text='Download CV' />
+            <Button link='/my_cv.pdf' text='Download CV' />
 
             {/* <div className={styles.mobileMenu + ` ${open ? 'flex' : 'hidden'}`}>
                 <a href="#home">Home</a>

@@ -19,7 +19,8 @@ export default function Header(){
                         to existing problems and simplifying complex procedures, 
                         also be an excellent performer in a highly competitive environment.
                     </p>
-                    <Button text="Get In Touch" />
+                    
+                    <Button link='#contact' text="Get In Touch" />
                     
                     <div className={styles.socialLinks}>
                         <a className='link' href="/"><ImTwitter /></a>

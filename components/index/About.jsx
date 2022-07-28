@@ -13,9 +13,9 @@ export default function About(props){
                     <div className="">
                         <div className="text-lg flex flex-col gap-5 items-start">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat atque reiciendis suscipit, ab distinctio ipsum error, doloremque expedita ratione quod itaque nihil nam asperiores labore neque. Inventore pariatur dicta veniam?    
+                                I am Web/Software Developer aspiring to work as an expert in Web/Software Development proffering solutions to existing problems and simplifying complex procedures, also be an excellent performer in a highly competitive environment with a view of contributing to the effectiveness and growth of my community, possessing a strong will to advance in my technical career.
                             </p>
-                            <Button text='Get In Touch' />
+                            <Button link='#contact' text='Get In Touch' />
                         </div>
                     </div>  
             </div>
@@ -38,7 +38,7 @@ function TechInfo({tech}){
             <p className="text-center">
                 {tech.description}
             </p>
-            <Button text='Get In Touch' className='bg-red-500/80' />
+            <Button link='#contact' text='Get In Touch' className='bg-red-500/80' />
         </div>
     )
 }
