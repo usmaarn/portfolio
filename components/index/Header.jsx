@@ -7,8 +7,8 @@ import Wrapper from '@/components/Wrapper'
 export default function Header(){
 
     return(
-        <Wrapper id='home'> 
-            <div className="md:pt-10">
+        <div id='home' className='relative h-screen overflow-hidden px-5 md:px-20 pt-20'> 
+            <div className="h-full flex items-center">
                 <div className={styles.overlay} />
                 <div className={styles.header}>
                     <h5 className={styles.hello}>Hi, my name is</h5>
@@ -28,7 +28,7 @@ export default function Header(){
                     </div>
                 </div>
             </div>
-        </Wrapper>
+        </div>
     )
 
 }

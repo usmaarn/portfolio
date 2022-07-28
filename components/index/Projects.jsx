@@ -2,26 +2,41 @@ import {Button} from "@/components/Form";
 import Wrapper from "@/components/Wrapper";
 import {ImGithub} from 'react-icons/im'
 import {HiOutlineExternalLink} from 'react-icons/hi'
-import {GiExpand} from 'react-icons/gi'
 
 export default function Projects(){
     return(
         <Wrapper className="" title='Some of my works' id='projects'>
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="max-w-[1000px] mx-auto">
                 {projects.map(project => (
-                    <div key={project.id} className="relative shadow p-5 rounded-xl h-72 
-                        bg-black/90 cursor-pointer text-slate-300 
-                        hover:bg-green-200 hover:text-slate-700">
-                        <div className="absolute bottom-5 right-5 text-2xl flex items-center gap-5">
-                            <a href="#" className="hover:scale-125"><ImGithub /></a>
-                            <a href='#' className="hover:scale-125"><HiOutlineExternalLink /></a>
-                            <a href="#" className="hover:scale-125"><GiExpand /></a>
+                  <div className="relative mb-10">
+                      <div className="bg-slate-800 rounded-lg w-2/3 h-96" />
+                      <div className="absolute right-0 w-2/3 top-0 h-full p-10 flex flex-col items-end gap-5">
+                        
+                        <div className="flex flex-col gap-3">
+                          <h6>Featured Project</h6>
+                          <h5 className="text-2xl">Build a Spotify Connected App</h5>
                         </div>
-                        <div className="flex flex-col gap-5 items-center justify-center h-full">
-                            <h1 className="uppercase text-xl font-bold">{project.name}</h1>
+
+                        <div className="px-8 text-[15px] py-7 rounded bg-slate-700">
+                          <p className=''>
+                            A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+                          </p>
                         </div>
-                    </div>
-                ) )}
+
+                        <div className='flex flex-wrap gap-2 items-center'>
+                              {['laravel', 'tailwindcss', 'react', 'mysql'].map(item => (
+                              <p key={item} className='px-3 py-1.5 rounded text-xs uppercase tracking-wide'>{item}</p>
+                            ))}
+                          </div>
+
+                        <div className="flex items-center gap-5 text-2xl">
+                            <a href=""><HiOutlineExternalLink /></a>
+                            <a href=""><ImGithub /></a>
+                          </div>
+
+                      </div>
+                  </div>
+                ))}
             </div>
         </Wrapper>
     )

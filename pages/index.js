@@ -9,7 +9,7 @@ import Skills from "@/components/index/Skills";
 
 export default function Index() {
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <div className="">
       <Header />
       <About />
       <Projects />
