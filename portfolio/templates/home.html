@@ -1,52 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="flex h-screen max-h-[600px] items-center">
-    <div class="flex flex-col items-start justify-center gap-10">
-        <h3 class="text-4xl text-green-500 font-medium">Hello, I am Usman Muhammad</h3>
-        <p class="text-xl text-stone-400 font-light max-w-screen-md leading-9">
-            I am a Skilled and experienced software developer with a strong foundation in Python, Node.js, and PHP.
-            Proven
-            ability to
-            design, develop, and maintain scalable and reliable software solutions. Expertise in web development, data
-            analysis, and
-            cloud computing. Demonstrated proficiency in agile methodologies and a collaborative work environment. Eager
-            to
-            leverage
-            technical skills to drive innovation and contribute to the success of the organization.
-        </p>
+<div class="home">
+    <section class="header">
+        <div class="about">
+            <h3>Hello, I am Usman Muhammad</h3>
+            <p class="bio">
+                I am a Skilled and experienced software developer with a strong foundation in Python, Node.js, and PHP.
+                Proven
+                ability to
+                design, develop, and maintain scalable and reliable software solutions. Expertise in web development,
+                data
+                analysis, and
+                cloud computing. Demonstrated proficiency in agile methodologies and a collaborative work environment.
+                Eager
+                to
+                leverage
+                technical skills to drive innovation and contribute to the success of the organization.
+            </p>
 
-        <div class="">
-            <a href="#">Github</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
-            <a href="#">Upwork</a>
-            <a href="#">Fiverr</a>
+            <div class="socials">
+                <a href="#">Github</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+                <a href="#">Upwork</a>
+                <a href="#">Fiverr</a>
+            </div>
+
+            <button class="px-5 bg-green-500 text-black py-2 rounded-lg font-normal">Hire Me</button>
         </div>
 
-        <button class="px-5 bg-green-500 text-black py-2 rounded-lg font-normal">Hire Me</button>
-    </div>
+        <img src="{{ url_for('static', filename='images/avatar.png')}}" alt="Software Developer with Laptop /">
+    </section>
 
-    <img src="{{ url_for('static', filename='images/avatar.png')}}" alt="Software Developer with Laptop /">
-</section>
+    <section class="bg-stone-800 p-5 mt-10 font-semibold">
+        <h3 class="uppercase text-sm tracking-wide mb-5">Here are my skills</h3>
 
-<section class="bg-stone-800 p-5 mt-10 font-semibold">
-    <h3 class="uppercase text-sm tracking-wide mb-5">Here are my skills</h3>
-
-    <div class="flex flex-wrap gap-5">
-        <div class="p-5 rounded-lg bg-stone-900 border border-dashed border-stone-500 flex gap-5 flex-wrap">
-            <img src="{{ url_for('static', filename='icons/js.svg')}}" class="object-fit w-20 h-20"
-                alt="Javascript Image" />
-            <div class="">
-                <h3 class="mb-1 font-bold">JAVASCRIPT</h3>
-                <p class="max-w-sm font-light mb-2">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo,
-                    laudantium.
-                </p>
-                <a class="text-sm text-white hover:underline" href="#">Learn more >></a>
+        <div class="flex flex-wrap gap-5">
+            <div class="p-5 rounded-lg bg-stone-900 border border-dashed border-stone-500 flex gap-5 flex-wrap">
+                <img src="{{ url_for('static', filename='icons/js.svg')}}" class="object-fit w-20 h-20"
+                    alt="Javascript Image" />
+                <div class="">
+                    <h3 class="mb-1 font-bold">JAVASCRIPT</h3>
+                    <p class="max-w-sm font-light mb-2">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo,
+                        laudantium.
+                    </p>
+                    <a class="text-sm text-white hover:underline" href="#">Learn more >></a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 {% endblock %}
