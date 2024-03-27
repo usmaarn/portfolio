@@ -1,5 +1,7 @@
 from flask import render_template, redirect, request, Blueprint
 
+from flask_login import current_user
+
 bp = Blueprint('app', __name__)
 
 @bp.route('/')
@@ -9,8 +11,9 @@ def home():
 
 @bp.route('/login', methods=['POST', 'GET'])
 def login():
+    if current_user:
+        
     return render_template('login.html')
-
 
 def subscribe():
     pass
