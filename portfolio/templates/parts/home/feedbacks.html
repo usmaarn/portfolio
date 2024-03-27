@@ -1,33 +1,29 @@
-<section>
+<section class="p-5">
     <h3 class="heading">Feedbacks</h3>
 
-    <div class="swiper w-[600px] h-[400px]">
+    <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             {% for feedback in [1,2,3,4,5,6,7,8] %}
-                <div class="swiper-slide">
-                    <div class="flex gap-3 p-5 border border-dashed border-stone-700 rounded-lg bg-stone-800">
-                        <div class="">
-                            <div class="w-12 h-12 rounded-full bg-stone-700"></div>
-                        </div>
-                        <div class="">
-                            <h4 class="capitalize font-bold">Sukurat Amusa</h4>
-                            <p class="text-sm font-light mt-2">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum eligendi
-                                minima culpa amet maiores illo libero cupiditate architecto perferendis!
-                            </p>
-                    
-                        </div>
+            <div class="swiper-slide">
+                <div class="flex gap-3 p-5 border border-dashed border-stone-700 rounded-lg bg-stone-800">
+                    <div class="">
+                        <div class="w-12 h-12 rounded-full bg-stone-700"></div>
+                    </div>
+                    <div class="">
+                        <h4 class="capitalize font-bold">Sukurat Amusa</h4>
+                        <p class="text-sm font-light mt-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nostrum eligendi
+                            minima culpa amet maiores illo libero cupiditate architecto perferendis!
+                        </p>
+
                     </div>
                 </div>
+            </div>
             {% endfor %}
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
 
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
