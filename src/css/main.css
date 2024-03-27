@@ -1,9 +1,5 @@
 body {
-    @apply bg-zinc-800 text-zinc-300;
-}
-
-* {
-    @apply border-zinc-700;
+    @apply bg-stone-900 text-stone-400 font-extralight;
 }
 
 @tailwind base;
