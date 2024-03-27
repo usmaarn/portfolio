@@ -3,7 +3,7 @@
 }
 
 section .heading {
-    @apply capitalize text-lg tracking-wide mb-5 font-semibold;
+    @apply capitalize text-lg tracking-wide font-semibold;
 }
 
 section .heading::before{

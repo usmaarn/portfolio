@@ -3,6 +3,9 @@ const swiper = new Swiper('.swiper', {
 //   direction: 'vertical',
   loop: true,
   effect: 'card',
+  virtual: {
+    enabled: true,
+  },
   centeredSlides: true,
   cardsEffect: {
 
