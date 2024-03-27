@@ -1,5 +1,5 @@
 from flask import Flask
-from datetime import datetime
+import datetime
 
 from portfolio.views import bp
 
@@ -10,8 +10,10 @@ def create_app():
     )
 
     @app.context_processor
-    def date(*arg, **kwargs):
-        return datetime.date()
+    def global_variables():
+        return {
+            "date": datetime.date,
+        }
 
     app.register_blueprint(bp)
 
