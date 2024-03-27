@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/css/main.css -o ./portfolio/static/css/app.css",
+    "watch": "npx tailwindcss -i ./src/css/main.css -o ./portfolio/static/css/app.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.11",
+    "tailwindcss": "^3.4.1"
+  }
+}
