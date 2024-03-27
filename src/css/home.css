@@ -1,9 +1,9 @@
 .home {
-    @apply space-y-10;
+    @apply space-y-32;
 }
 
-section .heading{
-    @apply uppercase text-sm tracking-wide mb-5;
+section .heading {
+    @apply uppercase text-sm tracking-wide mb-5 font-semibold;
 }
 
 /* Home Header */
