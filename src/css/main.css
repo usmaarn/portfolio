@@ -1,3 +1,11 @@
+body {
+    @apply bg-zinc-800 text-zinc-300;
+}
+
+* {
+    @apply border-zinc-700;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
