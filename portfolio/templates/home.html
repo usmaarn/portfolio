@@ -9,5 +9,14 @@
     {% include 'parts/home/blogs.html' %}
     {% include 'parts/home/feedbacks.html' %}
 
+    <section class="bg-stone-800 p-5 md:p-10 flex flex-col items-center">
+        <h3 class="md:text-lg font-semibold mb-5 uppercase tracking-wider">Subscribe to my Newsletter</h3>
+        <form action="" class="flex flex-col md:flex-row max-w-screen-lg gap-2">
+            <input type="email" placeholder="email address" class="px-5 py-3 w-full rounded-lg bg-stone-900" />
+            <button
+                class="px-5 py-3 bg-stone-900 rounded-lg font-semibold hover:bg-green-700 hover:text-stone-900">Subscribe</button>
+        </form>
+    </section>
+
 </div>
 {% endblock %}
