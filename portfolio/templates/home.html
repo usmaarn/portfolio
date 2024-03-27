@@ -19,10 +19,21 @@
         <button class="px-5 bg-green-500 text-black py-2 rounded-lg font-normal">Hire Me</button>
     </div>
 
-    <img src="{{ url_for('static', filename='images/avatar.png')}}" alt="Hacker with Laptop /">
+    <img src="{{ url_for('static', filename='images/avatar.png')}}" alt="Software Developer with Laptop /">
 </section>
 
-<section class="">
-    
+<section class="bg-stone-800 p-5 mt-10 font-semibold">
+    <h3 class="uppercase text-sm tracking-wide mb-5">Here are my skills</h3>
+
+    <div class="flex flex-wrap gap-5">
+        <div class="w-full max-w-md px-3 py-2 rounded border border-stone-900">
+            <h3>JAVASCRIPT</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, laudantium.</p>
+        </div>
+        <div class="">
+            <h3>JAVASCRIPT</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, laudantium.</p>
+        </div>
+    </div>
 </section>
 {% endblock %}
