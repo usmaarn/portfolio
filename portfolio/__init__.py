@@ -1,5 +1,5 @@
-from uuid import uuid4
 from flask import Flask
+from datetime import datetime
 
 from portfolio.views import bp
 
@@ -8,6 +8,10 @@ def create_app():
     app.config.from_mapping(
         SECRET_KEY='dev',
     )
+
+    @app.context_processor
+    def date(*arg, **kwargs):
+        return datetime.date()
 
     app.register_blueprint(bp)
 
