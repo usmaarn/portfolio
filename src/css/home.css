@@ -11,11 +11,6 @@ section .heading {
     @apply flex flex-wrap items-center gap-3;
 }
 
-.home .header .about .socials a {
-    @apply px-3 py-1 uppercase text-xs bg-zinc-600 text-zinc-900 font-semibold;
-}
-
-
 /* Home Skills */
 
 
