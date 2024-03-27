@@ -1,3 +1,11 @@
+.home {
+    @apply space-y-10;
+}
+
+section .heading{
+    @apply uppercase text-sm tracking-wide mb-5;
+}
+
 /* Home Header */
 .home .header {
     @apply flex h-screen max-h-[600px] items-center;
