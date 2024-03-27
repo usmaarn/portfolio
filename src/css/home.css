@@ -7,28 +7,12 @@ section .heading {
 }
 
 /* Home Header */
-.home .header {
-    @apply flex h-screen max-h-[600px] items-center;
-}
-
-.home .header .about {
-    @apply flex flex-col items-start justify-center gap-10;
-}
-
-.home .header .about h3 {
-    @apply text-4xl text-green-500 font-medium;
-}
-
-.home .header .about .bio {
-    @apply text-xl text-stone-400 font-light max-w-screen-md leading-9;
-}
-
 .home .header .about .socials {
-    @apply flex items-center;
+    @apply flex flex-wrap items-center gap-3;
 }
 
 .home .header .about .socials a {
-    @apply border-r border-r-stone-500 px-3 last:border-r-0 hover:underline hover:text-green-500;
+    @apply px-3 py-1 uppercase text-xs bg-zinc-600 text-zinc-900 font-semibold;
 }
 
 
