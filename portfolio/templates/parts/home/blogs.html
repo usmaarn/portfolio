@@ -4,17 +4,33 @@
     <div class="grid md:grid-cols-2 gap-5 md:gap-10">
         {% for blog in ['1',2] %}
         <div class="">
-            <div class="h-64 md:h-96 bg-stone-800 rounded-lg"></div>
-            <div class="">
+            <a href="#" class="block h-64 md:h-96 bg-stone-800 rounded-lg"></a>
+            <div class="px-3 md:py-3">
                 <h3 class="text-xl md:text-2xl text-stone-300 hover:text-stone-500 hover:underline font-bold">
                     <a href="#">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus autem
                     </a>
                 </h3>
-                <p class="mt-2 text-stone-500 md:text-lg">
+
+                <p class="font-normal text-stone-500 space-x-2 text-sm mt-1">
+                    <span>21 days ago</span>
+                    <span>|</span>
+                    <span>3 mins read</span>
+                </p>
+
+                <p class="my-2 text-stone-500 md:text-lg">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe eius dolore, id ratione hic sapiente
                     magnam iste odit suscipit beatae?
                 </p>
+                <a href="#"
+                    class="inline-flex items-center text-sm capitalize hover:underline font-semibold text-stone-400 hover:text-green-600">
+                    <span>Read Article</span>
+                    <svg class="w-6 h-6 text-inherit" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m7 16 4-4-4-4m6 8 4-4-4-4" />
+                    </svg>
+                </a>
             </div>
         </div>
         {% endfor %}
