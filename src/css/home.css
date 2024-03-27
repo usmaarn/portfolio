@@ -1,5 +1,5 @@
 .home {
-    @apply space-y-32;
+    @apply space-y-10 md:space-y-16;
 }
 
 section .heading {
