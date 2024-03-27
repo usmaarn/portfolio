@@ -9,6 +9,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
+        SQLALCHEMY_DATABASE_URI="postgresql+psycopg://usman:Babalogun#1@localhost/portfolio"
     )
 
     login_manager = LoginManager(app)
