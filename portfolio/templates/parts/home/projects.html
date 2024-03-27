@@ -11,8 +11,7 @@
                 </h4>
                 <div class="flex items-center gap-3 uppercase font-medium text-xs">
                     {% for skill in ['javascript', 'react', 'tailwindcss'] %}
-                    <a href="#"
-                        class="tag">{{skill}}</a>
+                    <a href="#" class="tag">{{skill}}</a>
                     {% endfor %}
                 </div>
                 <p class="mb-2">
@@ -20,11 +19,35 @@
                     aspernatur....
                 </p>
                 <div class="flex items-center gap-3 justify-end">
-                    <button>like</button>
-                    <button>comment</button>
+                    <button>
+                        <svg class="w-6 h-6 text-stone-800 dark:text-stone-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                        </svg>
+                    </button>
+                    <button>
+                        <svg class="w-6 h-6 text-stone-800 dark:text-stone-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7.556 8.5h8m-8 3.5H12m7.111-7H4.89a.896.896 0 0 0-.629.256.868.868 0 0 0-.26.619v9.25c0 .232.094.455.26.619A.896.896 0 0 0 4.89 16H9l3 4 3-4h4.111a.896.896 0 0 0 .629-.256.868.868 0 0 0 .26-.619v-9.25a.868.868 0 0 0-.26-.619.896.896 0 0 0-.63-.256Z" />
+                        </svg>
+                    </button>
                     <div class="w-0.5 h-5 bg-zinc-600"></div>
-                    <a href="#">Github</a>
-                    <a href="#">View</a>
+                    <a href="#">
+                        <svg class="w-6 h-6 text-stone-800 dark:text-stone-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14" />
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="w-6 h-6 text-stone-800 dark:text-stone-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z" />
+                            <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
