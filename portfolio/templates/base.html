@@ -20,7 +20,7 @@
         {% endblock %}
     </main>
 
-    <footer class="px-5 py-10 bg-stone-800">
+    <footer class="px-5 py-10 bg-black">
         <div class="max-w-screen-xl mx-auto">
             <section class="text-center max-w-screen-sm mx-auto space-y-5">
                 <h3 class="md:text-lg font-semibold uppercase tracking-wider">Subscribe to my Newsletter</h3>
@@ -37,9 +37,10 @@
                 </form>
             </section>
 
-            <div class="flex mt-5 border-t border-stone-700 py-5">
-                <p class="capitalize font-light text-center text-stone-500">
-                    &copy; {{date.today().year}} <a href="/">Dev Usman | All Rights Reserved</a>
+            <div class="mt-5 border-t border-stone-900 py-5">
+                <p class="capitalize font-light text-right text-stone-600">
+                    &copy; {{date.today().year}} <a href="/" class="font-semibold hover:underline">usmaarn.dev</a> | All
+                    Rights Reserved
                 </p>
             </div>
         </div>
