@@ -8,12 +8,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 
-<body>
-    <div class="">
-        {% block content %}
-        <h1 class="text-4xl font-bold">Hello from Dev Usman</h1>
-        {% endblock %}
-    </div>
+<body class="bg-zinc-800 min-h-screen">
+    <header>
+        {% include 'layouts/navbar.html' %}
+    </header>
+
+    <main class="">
+
+        <div class="">
+            {% block content %}
+            <h1 class="text-4xl font-bold">Hello from Dev Usman</h1>
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 
 </html>

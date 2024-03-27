@@ -10,5 +10,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+# CMD sh -c "gunicorn -w 4 -b 0.0.0.0:5000 --reload main:app"
 CMD sh -c "gunicorn -w 4 -b 0.0.0.0:5000 --reload main:app"
 
