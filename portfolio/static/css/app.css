@@ -1058,6 +1058,10 @@ video {
     display: block;
   }
 
+  .md\:inline {
+    display: inline;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -1123,6 +1127,22 @@ video {
 
   .md\:leading-9 {
     line-height: 2.25rem;
+  }
+
+  .md\:hover\:bg-inherit:hover {
+    background-color: inherit;
+  }
+
+  .md\:hover\:font-normal:hover {
+    font-weight: 400;
+  }
+
+  .md\:hover\:text-inherit:hover {
+    color: inherit;
+  }
+
+  .md\:hover\:underline:hover {
+    text-decoration-line: underline;
   }
 }
 
