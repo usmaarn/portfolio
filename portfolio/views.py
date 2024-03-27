@@ -12,7 +12,7 @@ def home():
 @bp.route('/login', methods=['POST', 'GET'])
 def login():
     if current_user:
-        
+        return redirect('/')
     return render_template('login.html')
 
 def subscribe():
