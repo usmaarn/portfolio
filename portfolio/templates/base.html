@@ -20,8 +20,21 @@
         {% endblock %}
     </main>
 
-    <footer>
-
+    <footer class="px-5 py-10 bg-stone-800">
+        <div class="max-w-screen-xl mx-auto">
+            <section class="text-center">
+                <h3 class="md:text-lg font-semibold mb-5 uppercase tracking-wider">Subscribe to my Newsletter</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolor delectus aut reiciendis explicabo illo ullam neque harum! Explicabo et ipsam excepturi consectetur dolores sapiente dolor numquam quod, voluptatum debitis.
+                </p>
+                <form action="" class="flex flex-col md:flex-row max-w-screen-sm mx-auto gap-2">
+                    <input type="email" placeholder="email address"
+                        class="px-5 py-3 flex-grow rounded-lg bg-stone-900" />
+                    <button
+                        class="px-5 py-3 md:py-0 bg-stone-900 rounded-lg font-semibold hover:bg-green-700 hover:text-stone-900">Subscribe</button>
+                </form>
+            </section>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
