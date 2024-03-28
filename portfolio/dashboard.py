@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from flask_login import login_required
+from .decorators import login_required
 
 dash = Blueprint('admin', __name__)
 
