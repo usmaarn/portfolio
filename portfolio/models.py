@@ -6,6 +6,19 @@ from flask_login import UserMixin
 
 from .db import db
 
+
+# Association Tables
+project_skill_association_table = Table(
+    "project_skill_association_table",
+    db.Model.metadata,
+    Column("project_id", ForeignKey('projects.id'), primary_key=True),
+    Column("skill_id", ForeignKey('skills.id'), primary_key=True),
+)
+
+
+
+
+# Models
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
@@ -47,7 +60,7 @@ class Skill(db.Model):
     slug: Mapped[str] = mapped_column(unique=True)
     description: Mapped[Text] = mapped_column(nullable=True)
     icon: Mapped[str] = mapped_column(nullable=True)
-    projects: Mapped[List['Project']] = relationship(back_populates='technologies')
+    projects: Mapped[List['Project']] = relationship(secondary=project_skill_association_table, back_populates='technologies')
 
 
 class Project(db.Model):
@@ -57,4 +70,4 @@ class Project(db.Model):
     title: Mapped[str] = mapped_column(unique=True)
     slug: Mapped[str] = mapped_column(unique=True)
     description: Mapped[Text] = mapped_column(nullable=True)
-    technologies: Mapped[List['Skill']] = relationship(back_populates='projects')
+    technologies: Mapped[List['Skill']] = relationship(secondary=project_skill_association_table, back_populates='projects')
