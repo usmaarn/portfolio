@@ -31,19 +31,19 @@
                 </p>
                 <form action="" class="flex flex-col md:flex-row gap-2">
                     <input type="email" placeholder="email address"
-                        class="px-5 py-3 flex-grow rounded-lg bg-stone-900" />
+                        class="px-5 py-3 flex-grow rounded-lg bg-green-900/50 outline-green-600" />
                     <button
-                        class="px-5 py-3 md:py-0 bg-stone-900 rounded-lg font-semibold hover:bg-green-700 hover:text-stone-900">Subscribe</button>
+                        class="px-5 py-3 md:py-0 outline outline-green-600 text-green-600 rounded-lg font-semibold hover:bg-green-600 hover:text-black">Subscribe</button>
                 </form>
             </section>
 
-            <div class="mt-5 border-t border-stone-900 py-5">
-                <p class="capitalize font-light text-center text-stone-600">
+            <div class="mt-5 border-t border-black py-5">
+                <p class="capitalize font-light text-center text-stone-500">
                     &copy; {{date.today().year}} <a href="/" class="font-semibold hover:underline">usmaarn.dev</a> | All
                     Rights Reserved
                 </p>
             </div>
-        </div>
+        </div> 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
