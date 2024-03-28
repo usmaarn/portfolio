@@ -2,7 +2,7 @@ name: 'portfolio'
 
 services:
   app:
-    platform: linux/amd64
+    platform: linux/arm64
     build: .
     restart: always
     volumes:
@@ -13,8 +13,8 @@ services:
       - db
 
   db:
-    platform: linux/amd64
-    image: postgres:16.2
+    platform: linux/arm64
+    image: postgres:16.2-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
