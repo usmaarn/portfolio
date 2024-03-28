@@ -1,6 +1,8 @@
 from flask import render_template, redirect, request, Blueprint
-
 from flask_login import current_user
+
+from .forms import LoginForm
+from .decorators import guest
 
 bp = Blueprint('app', __name__)
 
@@ -10,9 +12,8 @@ def home():
 
 
 @bp.route('/login', methods=['POST', 'GET'])
+@guest
 def login():
-    if current_user.is_authenticated:
-        return redirect('/')
     return render_template('login.html')
 
 
