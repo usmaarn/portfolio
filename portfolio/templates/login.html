@@ -9,7 +9,7 @@
         {{form.csrf_token}}
         <div class="">
             <input type="text" name="username" placeholder="username"
-                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" value="{{form.username.data}}" />
+                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" value="{{form.username.data or ''}}" />
             {% for error in form.username.errors %}
             <div class="">
                 <p class="font-semibold text-red-500">{{error}}</p>
@@ -18,7 +18,7 @@
         </div>
         <div class="">
             <input type="password" name="password" placeholder="Password"
-                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" value="{{form.password.data}}" />
+                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" value="{{form.password.data or ''}}" />
             {% for error in form.password.errors %}
             <div class="">
                 <p class="font-semibold text-red-500">{{error}}</p>
