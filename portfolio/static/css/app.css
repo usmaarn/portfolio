@@ -852,6 +852,12 @@ video {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
+.space-x-5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .rounded{
   border-radius: 0.25rem;
 }
@@ -862,6 +868,19 @@ video {
 
 .rounded-lg{
   border-radius: 0.5rem;
+}
+
+.rounded-l{
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.rounded-bl{
+  border-bottom-left-radius: 0.25rem;
+}
+
+.rounded-bl-none{
+  border-bottom-left-radius: 0px;
 }
 
 .border{

@@ -1,0 +1,16 @@
+<aside class="w-64 h-screen sticky top-0 border-r border-r4 border-stone-700">
+    <h1 class="p-5 text-xl border-b border-stone-700">Admin Panel</h1>
+
+    <div class="">
+        <ul class="p-5">
+            {% for link in ['dashboard', 'site info', 'skills', 'projects', 'blogs'] %}
+            <li class="">
+                <a href="#"
+                    class="block text-lg capitalize px-5 py-2 rounded-full hover:bg-green-600 rounded-bl-none hover:text-black hover:font-bold">{{
+                    link
+                    }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>

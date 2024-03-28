@@ -28,3 +28,18 @@ class Subscriber(db.Model):
     name: Mapped[str]
     email: Mapped[str] = mapped_column(nullable=False, unique=True)
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
+
+
+class Site(db.Model):
+    __tablename__ = 'site_info'
+
+    name: Mapped[str] = mapped_column(unique=True)
+    value = Mapped[str] = mapped_column(nullable=True)
+
+
+class Skill(db.Model):
+    __tabelname__ = 'skills'
+
+    
+    name: Mapped[str] = mapped_column(unique=True)
+    value = Mapped[str] = mapped_column(nullable=True)
