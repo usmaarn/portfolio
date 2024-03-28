@@ -4,4 +4,4 @@ dash = Blueprint('admin', __name__)
 
 @dash.get('/')
 def index():
-    return render_template('dashboard/index.html')
+    return render_template('admin.html')
