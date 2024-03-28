@@ -2,6 +2,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
 import datetime
+from werkzeug.security import generate_password_hash
 
 from .views import bp
 from .models import User
@@ -21,6 +22,9 @@ def create_app():
 
     with app.app_context():
         db.create_all()
+        user = User(username='usman', email='baba@test.com', password=generate_password_hash('12345'))
+        db.session.add(user)
+        db.session.commit()
 
     @app.context_processor
     def global_variables():

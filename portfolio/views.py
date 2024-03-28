@@ -5,13 +5,13 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from .forms import LoginForm
 from .decorators import guest
 from .models import User
+from .db import db
 
 bp = Blueprint('app', __name__)
 
 @bp.route('/')
 def home():
-    user = User(firstname='Usman', lastname='Muhammad', username='usman', email='baba@test.com', password=generate_password_hash('12345'))
-    print(user)
+    
     return render_template('home.html')
 
 

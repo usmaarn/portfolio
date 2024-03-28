@@ -8,8 +8,8 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    firstname: Mapped[str] = mapped_column(nullable=False)
-    lastname: Mapped[str] = mapped_column(nullable=False)
+    firstname: Mapped[str] = mapped_column(nullable=True)
+    lastname: Mapped[str] = mapped_column(nullable=True)
     username: Mapped[str] = mapped_column(unique=True, nullable=False)
     email: Mapped[str] = mapped_column(unique=True, nullable=False)
     password: Mapped[str] = mapped_column(nullable=False)
@@ -17,7 +17,7 @@ class User(db.Model):
     email_verified_at: Mapped[datetime] = mapped_column(nullable=True)
 
     def __repr__(self) -> str:
-        pass
+        return f"<User {self.username}>"
 
 
 class Subscriber(db.Model):
