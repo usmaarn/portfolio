@@ -11,15 +11,17 @@
 
 <body class="min-h-screen flex max-w-screen-xl mx-auto bg-black text-stone-200">
 
-    {% include 'layouts/admin-sidebar.html' %}
-    
-    <section class="flex-grow">
-        {% include 'layouts/admin-navbar.html' %}
-        <main>
-            {% block content %}
-
-            {% endblock %}
-        </main>
+    <section x-data="{open: false}">
+        {% include 'layouts/admin-sidebar.html' %}
+        
+        <section class="flex-grow">
+            {% include 'layouts/admin-navbar.html' %}
+            <main>
+                {% block content %}
+        
+                {% endblock %}
+            </main>
+        </section>
     </section>
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>

@@ -16,8 +16,6 @@ project_skill_association_table = Table(
 )
 
 
-
-
 # Models
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -53,7 +51,7 @@ class Site(db.Model):
 
 
 class Skill(db.Model):
-    __tabelname__ = 'skills'
+    __tablename__ = 'skills'
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(unique=True)
