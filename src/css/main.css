@@ -1,7 +1,7 @@
 @import 'home.css';
 
 body {
-    @apply bg-black text-stone-200 font-light;
+    @apply bg-black text-stone-400 font-light;
 }
 
 a {
