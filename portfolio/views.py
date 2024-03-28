@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request, Blueprint, flash, url_for
 from flask_login import current_user, login_user
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 
 from .forms import LoginForm
 from .decorators import guest
@@ -10,6 +10,8 @@ bp = Blueprint('app', __name__)
 
 @bp.route('/')
 def home():
+    user = User(firstname='Usman', lastname='Muhammad', username='usman', email='baba@test.com', password=generate_password_hash('12345'))
+    print(user)
     return render_template('home.html')
 
 

@@ -14,7 +14,7 @@ class User(db.Model):
     email: Mapped[str] = mapped_column(unique=True, nullable=False)
     password: Mapped[str] = mapped_column(nullable=False)
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
-    email_verified_at: Mapped[datetime] = mapped_column()
+    email_verified_at: Mapped[datetime] = mapped_column(nullable=True)
 
     def __repr__(self) -> str:
         pass
