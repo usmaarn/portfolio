@@ -22,9 +22,6 @@ def create_app():
 
     with app.app_context():
         db.create_all()
-        user = User(username='usman', email='baba@test.com', password=generate_password_hash('12345'))
-        db.session.add(user)
-        db.session.commit()
 
     @app.context_processor
     def global_variables():
@@ -43,6 +40,6 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(user_id):
-        return User.get(user_id)
+        return User.query.get(user_id)
     
     return app
