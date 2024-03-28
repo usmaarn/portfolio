@@ -10,6 +10,7 @@ class LoginForm(FlaskForm):
     password = PasswordField(validators=[
         DataRequired('Password field is required')
     ])
+    remember = BooleanField()
 
 
 class SubscribeForm(FlaskForm):
