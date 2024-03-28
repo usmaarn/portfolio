@@ -5,6 +5,7 @@ body {
 }
 
 a {
+    @apply text-inherit;
     transition: all;
     transition-duration: 500;
 }
@@ -15,7 +16,7 @@ a {
 
 @layer components {
     .btn-inline {
-        @apply font-normal px-3 py-2 outline outline-1 text-sm outline-stone-400 text-stone-400 hover:bg-stone-400 rounded hover:text-black;
+        @apply font-normal px-3 py-2 outline outline-1 text-sm outline-stone-400 hover:bg-stone-400 rounded hover:text-black w-full;
     }
 
     .tag {
