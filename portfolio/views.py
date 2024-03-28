@@ -3,6 +3,7 @@ from flask_login import current_user
 
 from .forms import LoginForm
 from .decorators import guest
+from .models import User
 
 bp = Blueprint('app', __name__)
 
@@ -14,7 +15,10 @@ def home():
 @bp.route('/login', methods=['POST', 'GET'])
 @guest
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+    if form.validate_on_submit():
+        pass
+    return render_template('login.html', form=form)
 
 
 def subscribe():

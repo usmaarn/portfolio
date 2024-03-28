@@ -6,8 +6,9 @@
     <h1 class="text-2xl font-bold">Login</h1>
 
     <form action="" class="flex flex-col gap-3 mt-5" method="post">
-        <input type="text" placeholder="username" class="px-5 py-3 rounded-lg bg-stone-800 font-semibold" />
-        <input type="text" placeholder="password" class="px-5 py-3 rounded-lg bg-stone-800 font-semibold" />
+        {{form.csrf_token}}
+        <input type="text" name="username" placeholder="username" class="px-5 py-3 rounded-lg bg-stone-800 font-semibold" />
+        <input type="text" name="password" placeholder="password" class="px-5 py-3 rounded-lg bg-stone-800 font-semibold" />
         <button class="px-5 py-3 bg-green-700 rounded-lg text-black font-semibold">Login</button>
     </form>
 </div>

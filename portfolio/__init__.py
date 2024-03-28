@@ -1,11 +1,13 @@
 from flask import Flask
 from flask_login import LoginManager
+from flask_wtf.csrf import CSRFProtect
 import datetime
 
 from .views import bp
 from .models import User
 from .db import db
 
+csrf = CSRFProtect()
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
@@ -15,6 +17,7 @@ def create_app():
     )
 
     db.init_app(app)
+    csrf.init_app(app)
 
     with app.app_context():
         db.create_all()

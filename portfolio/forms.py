@@ -1,8 +1,9 @@
-from wtforms import Form, BooleanField, StringField, PasswordField, EmailField
+from wtforms import BooleanField, StringField, PasswordField, EmailField
+from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Length, Email
 
 
-class LoginForm(Form):
+class LoginForm(FlaskForm):
     username = StringField(validators=[
         DataRequired("Username field is required")
     ])
@@ -11,7 +12,7 @@ class LoginForm(Form):
     ])
 
 
-class SubscribeForm(Form):
+class SubscribeForm(FlaskForm):
     name = StringField(validators=[
         Length(min=3, max=25, message='Name must be between 3 - 25 chars')
     ])
