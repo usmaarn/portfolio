@@ -4,6 +4,11 @@ body {
     @apply bg-black text-stone-200 font-light;
 }
 
+a {
+    transition: all;
+    transition-duration: 500;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
