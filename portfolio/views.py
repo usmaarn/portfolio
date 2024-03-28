@@ -11,9 +11,10 @@ def home():
 
 @bp.route('/login', methods=['POST', 'GET'])
 def login():
-    if current_user:
+    if current_user.is_authenticated:
         return redirect('/')
     return render_template('login.html')
+
 
 def subscribe():
     pass

@@ -2,20 +2,22 @@ from flask import Flask
 from flask_login import LoginManager
 import datetime
 
+from .views import bp
+from .models import User
+from .db import db
 
-from portfolio.views import bp
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI="postgresql+psycopg://usman:Babalogun#1@localhost/portfolio"
+        SQLALCHEMY_DATABASE_URI="postgresql+psycopg://usman:'Babalogun#1'@db/portfolio"
     )
 
-    login_manager = LoginManager(app)
-    @login_manager.user_loader
-    def load_user(user_id):
-        return 
+    db.init_app(app)
+
+    with app.app_context():
+        db.create_all()
 
     @app.context_processor
     def global_variables():
@@ -23,6 +25,17 @@ def create_app():
             "date": datetime.date,
         }
 
-    app.register_blueprint(bp)
 
+    from .dashboard import dash
+
+    app.register_blueprint(bp)
+    app.register_blueprint(dash, url_prefix='/admin')
+
+    login_manager = LoginManager(app)
+    login_manager.login_view = 'app.login'
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.get(user_id)
+    
     return app
