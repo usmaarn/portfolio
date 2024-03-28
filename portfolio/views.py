@@ -1,5 +1,6 @@
-from flask import render_template, redirect, request, Blueprint
+from flask import render_template, redirect, request, Blueprint, flash
 from flask_login import current_user
+from werkzeug.security import check_password_hash
 
 from .forms import LoginForm
 from .decorators import guest
@@ -17,7 +18,12 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        pass
+        user = User.query.filter_by(username=form.username.data)
+        if user is None:
+            flash("Username does not exist!", "error")
+        elif not check_password_hash(user.password, form.password.data):
+            
+            
     return render_template('login.html', form=form)
 
 
