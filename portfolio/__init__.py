@@ -14,11 +14,6 @@ def create_app():
         SQLALCHEMY_DATABASE_URI="postgresql+psycopg://usman:'Babalogun#1'@db/portfolio"
     )
 
-    db.init_app(app)
-
-    with app.app_context():
-        db.create_all()
-
     @app.context_processor
     def global_variables():
         return {
