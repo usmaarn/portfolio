@@ -9,15 +9,22 @@
         {{form.csrf_token}}
         <div class="">
             <input type="text" name="username" placeholder="username"
-                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" />
+                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" value="{{form.username.data}}" />
             {% for error in form.username.errors %}
-                <div class="">
-                    <p class="font-semibold text-red-500">Invalid username</p>
-                </div>
+            <div class="">
+                <p class="font-semibold text-red-500">{{error}}</p>
+            </div>
             {% endfor %}
         </div>
-        <input type="text" name="password" placeholder="password"
-            class="px-5 py-3 rounded-lg bg-stone-800 font-semibold" />
+        <div class="">
+            <input type="password" name="password" placeholder="Password"
+                class="px-5 py-3 rounded-lg bg-stone-800 font-semibold w-full" value="{{form.password.data}}" />
+            {% for error in form.password.errors %}
+            <div class="">
+                <p class="font-semibold text-red-500">{{error}}</p>
+            </div>
+            {% endfor %}
+        </div>
         <button class="px-5 py-3 bg-green-700 rounded-lg text-black font-semibold">Login</button>
     </form>
 </div>

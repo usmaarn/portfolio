@@ -18,14 +18,15 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data)
-        if user is None:
-            form.username.errors.append("Username does not exist!")
-        elif not check_password_hash(user.password, form.password.data):
-            form.password.errors.append("Incorrect Password")
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if check_password_hash(user.password, form.password.data):
+                login_user(user, remember=form.remember.data)
+                return redirect(request.args.get('next', '/'))
+            else:
+                form.password.errors.append("Incorrect Password")
         else:
-            login_user(user, remember=form.remember.data)
-            return redirect(request.args.get('next', '/'))
+            form.username.errors.append("User does not exist!")
     return render_template('login.html', form=form)
 
 
