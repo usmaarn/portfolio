@@ -1,3 +1,4 @@
+from sqlalchemy import Table, Column, ForeignKey, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import List, Text
 from datetime import datetime
@@ -46,7 +47,7 @@ class Skill(db.Model):
     slug: Mapped[str] = mapped_column(unique=True)
     description: Mapped[Text] = mapped_column(nullable=True)
     icon: Mapped[str] = mapped_column(nullable=True)
-    projects: Mapped[List['Project']] = relationship('Project', back_populates='technologies')
+    projects: Mapped[List['Project']] = relationship(back_populates='technologies')
 
 
 class Project(db.Model):
@@ -56,4 +57,4 @@ class Project(db.Model):
     title: Mapped[str] = mapped_column(unique=True)
     slug: Mapped[str] = mapped_column(unique=True)
     description: Mapped[Text] = mapped_column(nullable=True)
-    technologies: Mapped[List['Skill']] = relationship('Skill', back_populates='projects')
+    technologies: Mapped[List['Skill']] = relationship(back_populates='projects')
