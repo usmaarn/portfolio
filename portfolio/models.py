@@ -1,5 +1,5 @@
-from sqlalchemy.orm import Mapped, mapped_column
-from typing import List
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from typing import List, Text
 from datetime import datetime
 from flask_login import UserMixin
 
@@ -33,13 +33,27 @@ class Subscriber(db.Model):
 class Site(db.Model):
     __tablename__ = 'site_info'
 
+    id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(unique=True)
-    value = Mapped[str] = mapped_column(nullable=True)
+    value: Mapped[str] = mapped_column(nullable=True)
 
 
 class Skill(db.Model):
     __tabelname__ = 'skills'
 
-    
+    id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(unique=True)
-    value = Mapped[str] = mapped_column(nullable=True)
+    slug: Mapped[str] = mapped_column(unique=True)
+    description: Mapped[Text] = mapped_column(nullable=True)
+    icon: Mapped[str] = mapped_column(nullable=True)
+    projects: Mapped[List['Project']] = relationship('Project', back_populates='technologies')
+
+
+class Project(db.Model):
+    __tablename__ = 'projects'
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    title: Mapped[str] = mapped_column(unique=True)
+    slug: Mapped[str] = mapped_column(unique=True)
+    description: Mapped[Text] = mapped_column(nullable=True)
+    technologies: Mapped[List['Skill']] = relationship('Skill', back_populates='projects')
