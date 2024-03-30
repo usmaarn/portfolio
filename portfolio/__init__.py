@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 from .views import bp
-from .models import User
+from .models import User, Site
 from .db import db
 
 load_dotenv()
@@ -24,6 +24,13 @@ def create_app():
         SQLALCHEMY_DATABASE_URI=f"postgresql+psycopg://{user}:{password}@{host}/{database}"
     )
 
+    # Add CLI Commands to App
+    from .cli import user_cli, db_cli
+
+    app.cli.add_command(user_cli)
+    app.cli.add_command(db_cli)
+
+
     db.init_app(app)
     csrf.init_app(app)
 
@@ -34,6 +41,7 @@ def create_app():
     def global_variables():
         return {
             "date": datetime.date,
+            "app_name": Site.query.filter_by(name='title').first() or os.getenv("APP_NAME", "App")
         }
 
     from .dashboard import dash

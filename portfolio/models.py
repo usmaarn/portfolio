@@ -49,6 +49,9 @@ class Site(db.Model):
     name: Mapped[str] = mapped_column(unique=True)
     value: Mapped[str] = mapped_column(nullable=True)
 
+    def __repr__(self) -> Text:
+        return self.value
+
 
 class Skill(db.Model):
     __tablename__ = 'skills'

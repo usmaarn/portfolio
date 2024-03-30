@@ -1,13 +1,20 @@
 @import 'home.css';
+@import "modal.css";
+
+* {
+    @apply transition-all duration-500;
+}
 
 body {
     @apply bg-black text-stone-400 font-light;
 }
 
-a {
-    @apply text-inherit;
-    transition: all;
-    transition-duration: 500;
+.sidebar {
+    @apply w-64 fixed top-0 left-0 z-10 bg-stone-900 h-screen md:sticky border-r-4 border-stone-700 md:block;
+}
+
+a.sidebar-link {
+    @apply block text-lg capitalize px-5 py-2 rounded-full hover:bg-black rounded-bl-none hover:font-bold;
 }
 
 @tailwind base;

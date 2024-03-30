@@ -4,15 +4,20 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from .forms import LoginForm
 from .decorators import guest
-from .models import User
+from .models import User, Site
 from .db import db
 
 bp = Blueprint('app', __name__)
 
 @bp.route('/')
 def home():
-    
-    return render_template('home.html')
+    context = {
+        "title": Site.query.filter_by(name='title').first(),
+        "name": Site.query.filter_by(name='name').first(),
+        "bio": Site.query.filter_by(name='bio').first(),
+        "action": Site.query.filter_by(name='action').first(),
+    }
+    return render_template('home.html', **context)
 
 
 @bp.route('/login', methods=['POST', 'GET'])

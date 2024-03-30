@@ -1,19 +1,9 @@
 <section class="header p-5 flex md:max-h-[600px] items-center mt-16">
     <div class="about flex flex-col items-start justify-center">
-        <h3 class="text-2xl md:text-4xl text-stone-400 font-bold mb-5 capitalize">I am Uthman Muhammad</h3>
-        <p class="bi0 md:text-xl text-stone-400 font-light max-w-screen-md md:leading-9 mb-10">
-            I am a Skilled and experienced software developer with a strong foundation in Python, Node.js, and PHP.
-            Proven
-            ability to
-            design, develop, and maintain scalable and reliable software solutions. Expertise in web development,
-            data
-            analysis, and
-            cloud computing. Demonstrated proficiency in agile methodologies and a collaborative work environment.
-            Eager
-            to
-            leverage
-            technical skills to drive innovation and contribute to the success of the organization.
-        </p>
+        <h3 class="text-2xl md:text-4xl text-stone-400 font-bold mb-5 capitalize">I am {{name}}</h3>
+        <div class="bi0 md:text-xl text-stone-400 font-light max-w-screen-md md:leading-9 mb-10">
+            {{bio}}
+        </div>
 
         <div class="socials mb-10">
             <a href="#">
@@ -72,12 +62,9 @@
                         clip-rule="evenodd" />
                 </svg>
             </a>
-            <!-- {% for link in ['github', 'linkedin', 'twitter', 'facebook', 'upwork', 'fiverr', 'youtube', 'tiktok'] %}
-            <a href="#" class="">{{link}}</a>
-            {% endfor %} -->
         </div>
 
-        <button class="px-5 bg-stone-500 text-black py-2 rounded font-normal">Hire Me</button>
+        <button class="px-5 bg-stone-500 text-black py-2 rounded font-normal">{{action}}</button>
     </div>
 
     <div class="hidden md:block">

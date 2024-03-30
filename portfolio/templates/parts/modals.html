@@ -1,0 +1,32 @@
+{% import 'parts/icons.html' as icons %}
+{% import 'parts/form.html' as forms %}
+
+{% macro form_modal(form, btn, title, method='post', action='') %}
+<!-- Modal toggle -->
+<div class="modal" x-data="{open: false}">
+    <button @click="open=true" class="btn" type="button"> {{btn}}</button>
+
+    <!-- Main modal -->
+    <div x-show="open" class="wrapper">
+        <div class="innerWrapper">
+            <!-- Modal content -->
+            <div class="content">
+                <!-- Modal header -->
+                <div class="modal-head">
+                    <h3 class="modal-title">
+                        {{title}}
+                    </h3>
+                    <button type="button" class="modal-close" @click="open=false">
+                        {{icons.close()}}
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5">
+                    {{forms.form(form, method=method, action=action)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
