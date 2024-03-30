@@ -2,19 +2,26 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
 import datetime
-from werkzeug.security import generate_password_hash
+from dotenv import load_dotenv
+import os
 
 from .views import bp
 from .models import User
 from .db import db
 
+load_dotenv()
 csrf = CSRFProtect()
+
+host = os.getenv('DB_HOST')
+user = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+database = os.getenv('DB_DATABASE')
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY='dev',
-        SQLALCHEMY_DATABASE_URI="postgresql+psycopg://usman:'Babalogun#1'@db/portfolio"
+        SECRET_KEY= os.getenv('SECRET_KEY'),
+        SQLALCHEMY_DATABASE_URI=f"postgresql+psycopg://{user}:{password}@{host}/{database}"
     )
 
     db.init_app(app)
@@ -28,7 +35,6 @@ def create_app():
         return {
             "date": datetime.date,
         }
-
 
     from .dashboard import dash
 

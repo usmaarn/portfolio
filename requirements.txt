@@ -4,3 +4,4 @@ psycopg[binary]
 gunicorn
 Flask-SQLAlchemy
 Flask-WTF
+python-dotenv
