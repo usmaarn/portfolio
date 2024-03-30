@@ -1,7 +1,8 @@
-from wtforms import BooleanField, StringField, PasswordField, EmailField, TextAreaField, FileField
+from wtforms import BooleanField, StringField, PasswordField, EmailField, SelectMultipleField
+from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Length, Email
-
+from flask_wtf.file import FileField, FileAllowed, FileSize
 
 class LoginForm(FlaskForm):
     username = StringField(validators=[
@@ -32,27 +33,40 @@ class SiteInfoForm(FlaskForm):
         DataRequired(),
         Length(min=6, max=50)
     ])
-    bio = TextAreaField('Bio', validators=[
+    bio = CKEditorField('Bio', validators=[
         DataRequired(),
         Length(min=300)
     ])
     action = StringField('Button Text', default='Hire Me')
-    # image = FileField('Image', validators=[
-        
-    # ])
+    avatar = FileField('Image', validators=[
+        FileAllowed(['jpg', 'png', 'jpeg', 'svg'], message="Images Only")
+    ])
 
 class SkillForm(FlaskForm):
-    name = StringField('Skill Name', validators=[
-        DataRequired(),
-        Length(min=5, max=25)
+    name = StringField(validators=[ DataRequired() ])
+    slug = StringField(validators=[ DataRequired() ])
+    description = CKEditorField()
+    icon = FileField(validators=[
+        FileSize(max_size=5000, message="File too large"),
+        FileAllowed(['jpg', 'png', 'jpeg', 'svg'], message="Images Only")
     ])
-    slug = StringField('Skill Slug', validators=[
+
+
+class ProjectForm(FlaskForm):
+    title = StringField('Title', validators=[
         DataRequired(),
-        Length(min=6, max=50)
+        Length(min=5, max=50)
     ])
-    description = TextAreaField('Description', validators=[
+    description = CKEditorField('Bio', validators=[
+        DataRequired(),
+        Length(min=300)
+    ])
+    code = StringField('Source Code Url')
+    link = StringField('Project Url')
+    thumbnail = FileField('Image', validators=[
+        FileAllowed(['jpg', 'png', 'jpeg', 'svg'], message="Images Only")
+    ])
+
+    technologies = SelectMultipleField(validators=[
         DataRequired()
     ])
-    # icon = FileField('Image', validators=[
-        
-    # ])

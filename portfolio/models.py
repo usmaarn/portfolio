@@ -50,7 +50,7 @@ class Site(db.Model):
     value: Mapped[str] = mapped_column(nullable=True)
 
     def __repr__(self) -> Text:
-        return self.value
+        return self.value or ''
 
 
 class Skill(db.Model):
@@ -70,5 +70,8 @@ class Project(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(unique=True)
     slug: Mapped[str] = mapped_column(unique=True)
+    # code: Mapped[str] = mapped_column(nullable=True)
+    # link: Mapped[str] = mapped_column(nullable=True)
     description: Mapped[Text] = mapped_column(nullable=True)
+    thumbnail: Mapped[str] = mapped_column(nullable=True)
     technologies: Mapped[List['Skill']] = relationship(secondary=project_skill_association_table, back_populates='projects')

@@ -5,3 +5,4 @@ gunicorn
 Flask-SQLAlchemy
 Flask-WTF
 python-dotenv
+flask-ckeditor

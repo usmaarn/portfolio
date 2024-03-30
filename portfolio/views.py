@@ -4,7 +4,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from .forms import LoginForm
 from .decorators import guest
-from .models import User, Site
+from .models import User, Site, Skill, Project
 from .db import db
 
 bp = Blueprint('app', __name__)
@@ -12,10 +12,13 @@ bp = Blueprint('app', __name__)
 @bp.route('/')
 def home():
     context = {
-        "title": Site.query.filter_by(name='title').first(),
-        "name": Site.query.filter_by(name='name').first(),
-        "bio": Site.query.filter_by(name='bio').first(),
-        "action": Site.query.filter_by(name='action').first(),
+        "title": Site.query.filter_by(name='title').first() or '',
+        "name": Site.query.filter_by(name='name').first() or '',
+        "bio": Site.query.filter_by(name='bio').first() or '',
+        "action": Site.query.filter_by(name='action').first() or '',
+        "avatar": Site.query.filter_by(name='avatar').first() or '',
+        "skills": Skill.query.all(),
+        "projects": Project.query.all()
     }
     return render_template('home.html', **context)
 

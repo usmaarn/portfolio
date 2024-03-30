@@ -1,0 +1,12 @@
+{% extends 'admin.html' %}
+
+{% import 'parts/form.html' as forms %}
+
+{% block content %}
+<div class="" x-data="{open: false}">
+    <div class="">
+        <h1 class="text-xl font-semibold">Update Project</h1>
+        {{forms.form(form)}}
+    </div>
+</div>
+{% endblock %}

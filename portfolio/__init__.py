@@ -4,12 +4,14 @@ from flask_wtf.csrf import CSRFProtect
 import datetime
 from dotenv import load_dotenv
 import os
+from flask_ckeditor import CKEditor
 
 from .views import bp
 from .models import User, Site
 from .db import db
 
 load_dotenv()
+
 csrf = CSRFProtect()
 
 host = os.getenv('DB_HOST')
@@ -21,8 +23,12 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY= os.getenv('SECRET_KEY'),
-        SQLALCHEMY_DATABASE_URI=f"postgresql+psycopg://{user}:{password}@{host}/{database}"
+        SQLALCHEMY_DATABASE_URI=f"postgresql+psycopg://{user}:{password}@{host}/{database}",
+        UPLOAD_FOLDER='portfolio/static/uploads'
     )
+
+    # Load CKEditor
+    ckeditor = CKEditor(app)
 
     # Add CLI Commands to App
     from .cli import user_cli, db_cli
@@ -46,8 +52,8 @@ def create_app():
 
     from .dashboard import dash
 
-    app.register_blueprint(bp)
-    app.register_blueprint(dash, url_prefix='/admin')
+    app.register_blueprint(bp, url_prefix="/")
+    app.register_blueprint(dash, url_prefix='/admin/')
 
     login_manager = LoginManager(app)
     login_manager.login_view = 'app.login'

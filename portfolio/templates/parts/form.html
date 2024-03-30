@@ -17,7 +17,8 @@
 
 
 {% macro form(form, btnText, class='', method='post', action='') -%}
-<form action="{{action}}" method="{{method}}" class="{{class}}">
+<form action="{{action}}" method="{{method}}" class="{{class}}" id="form" enctype="multipart/form-data">
+    {{form.csrf_token}}
     {% for field in form %}
     {% if field.type == 'checkbox' %}
     <h1>Checkbox Field</h1>

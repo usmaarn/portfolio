@@ -26,6 +26,8 @@
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    {{ ckeditor.load(pkg_type="basic") }}
+    {{ ckeditor.config(custom_config="uiColor: '#ff00ff'") }}
 </body>
 
 </html>

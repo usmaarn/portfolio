@@ -68,10 +68,23 @@ db_cli = AppGroup('db', help="Perform database transactions")
 def migrate():
     with current_app.app_context():
         db.create_all()
+        print('Database Migrated.')
+
+@db_cli.command('rollback', help="Rollback all migrations")
+def rollback():
+    with current_app.app_context():
+        db.drop_all()
+        print('All Table Dropped')
+
+
+@db_cli.command('populate', help="Populate Database")
+def populatep():
+    with current_app.app_context():
         db.session.add_all([
             Site(name='title', value="My App"),
             Site(name='name', value="My Name"),
             Site(name='bio', value="My Bio"),
-            Site(name='action', value="Hire Me")
+            Site(name='action', value="Hire Me"),
+            Site(name='avatar', value=""),
         ])
-        print('Database Migrated.')
+        db.session.commit()

@@ -3,15 +3,17 @@
 {% block content %}
 <div class="" x-data="{open: false}">
     <div class="flex items-center justify-between mb-5">
-        <h1 class="text-xl font-semibold">Skills</h1>
-        <a href="{{url_for('admin.create_skill')}}" class="btn-outline">Add Skill</a>
+        <h1 class="text-xl font-semibold">projects</h1>
+        <a href="{{url_for('admin.create_project')}}"
+            class="px-3 text-sm font-semibold py-2 rounded-lg outline text-blue-500 outline-blue-500 hover:bg-blue-500 hover:text-black">Add
+            Project</a>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-400">
             <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        Name
+                        Title
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Slug
@@ -25,24 +27,23 @@
                 </tr>
             </thead>
             <tbody>
-                {% for skill in skills %}
+                {% for project in projects %}
                 <tr class="odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700">
                     <th scope="row" class="px-6 py-4 font-mediumwhitespace-nowrap datext-white">
-                        {{skill.name}}
+                        {{project.title}}
                     </th>
                     <td class="px-6 py-4">
-                        {{skill.slug}}
+                        {{project.slug[:15]}}...
                     </td>
                     <td class="px-6 py-4">
-                        {{skill.Description}}
+                        {{project.description[:15]|safe}}...
                     </td>
-                    <td class="px-6 py-4 space-x-5">
-                        <a href="{{ url_for('admin.update_skill', slug=skill.slug) }}"
+                    <td class="px-6 py-4 space-x-3">
+                        <a href="{{ url_for('admin.update_project', slug=project.slug) }}"
                             class="font-medium text-blue-500 hover:underline">Edit</a>
-                        <form action="{{ url_for('admin.delete_skill', slug=skill.slug) }}" class="inline"
-                            method="post">
+                        <form action="{{ url_for('admin.delete_project', slug=project.slug) }}" class="inline" method="post">
                             <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-                            <button type="submit" onclick="return confirm('Are you sure you want to delete Skill?')"
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete project')"
                                 class="font-medium text-red-500 hover:underline">Delete</>
                         </form>
                     </td>
