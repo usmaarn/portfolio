@@ -11,16 +11,10 @@ export default function Navbar() {
       activeIcon: "solar:home-2-bold",
     },
     {
-      key: "/work",
-      label: "Work",
+      key: "/works",
+      label: "Works",
       icon: "tabler:briefcase",
       activeIcon: "tabler:briefcase-filled",
-    },
-    {
-      key: "/projects",
-      label: "Projects",
-      icon: "lets-icons:chart",
-      activeIcon: "uis:chart",
     },
     {
       key: "/blogs",
@@ -31,7 +25,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed bottom-3 left-1/2 border-background border-4 -translate-x-1/2 flex items-center justify-around w-full max-w-[300px] bg-neutral-900/90 py-2 rounded-2xl">
+    <nav className="fixed bottom-3 left-1/2 -translate-x-1/2 flex items-center justify-around w-full max-w-[300px] bg-neutral-900/90 py-2 rounded-2xl">
       {menutItems.map((item) => (
         <NavLink key={item.key} to={item.key}>
           {({ isActive, isPending, isTransitioning }) => (
